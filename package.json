@@ -1,0 +1,17 @@
+{
+  "name": "chat-app",
+  "version": "1.0.0",
+  "description": "Using sockets to make a real-time chat application",
+  "main": "index.js",
+  "dependencies": {
+    "socket.io": "^2.2.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ulises Rangel",
+  "license": "MIT"
+}
