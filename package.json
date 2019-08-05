@@ -2,15 +2,23 @@
   "name": "chat-app",
   "version": "1.0.0",
   "description": "Using sockets to make a real-time chat application",
-  "main": "index.js",
+  "main": "server.js",
   "dependencies": {
+    "express": "^4.17.1",
     "socket.io": "^2.2.0"
   },
   "devDependencies": {
+    "concurrently": "^4.1.1",
     "nodemon": "^1.19.1"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+    "start:prod": "node server.js",
+    "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
+    "client": "cd client && npm run start",
+    "install": "cd client && npm install",
+    "build": "cd client && npm run build",
+    "heroku-postbuild": "npm run build"
   },
   "author": "Ulises Rangel",
   "license": "MIT"
