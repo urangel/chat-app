@@ -9,9 +9,9 @@ const cors = require('cors');
 
 io.on('connection', socket => {
   console.log('connection established');
-  socket.on('chat-message', msg => {
-    console.log('message: ' + msg );
-    io.emit('chat-message', msg);
+  socket.on('chat-message', (userName, input) => {
+    console.log('message: ' + input );
+    io.emit('chat-message', userName, input);
   })
 
   socket.on('disconnect', () => {
@@ -19,9 +19,7 @@ io.on('connection', socket => {
   })
 });
 
-// io.emit('connection-message', socket => {
-//   socket.broadcast.emit('Please be nice to each other ✌');
-// })
+
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());

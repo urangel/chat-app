@@ -1,3 +1,25 @@
 .App {
   text-align: center;
 }
+
+#message-container {
+  max-width: 75%;
+}
+
+.own-message {
+  background-color: darkcyan;
+  color: #eee;
+  padding: 20px;
+  border-radius: 25px 20px 1% 25px;
+  max-width: 67%;
+  float: right;
+}
+
+.other-message {
+  background-color: lightblue;
+  color: #222;
+  padding: 20px;
+  border-radius: 25px 20px 25px 1%;
+  max-width: 67%;
+  float: left;
+}
